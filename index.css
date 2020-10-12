@@ -1,0 +1,12 @@
+.navig{
+    background-color: #2F4F4F ;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+    position: relative;
+    z-index:1;
+}
+
+nav{
+    color: whitesmoke;
+}
