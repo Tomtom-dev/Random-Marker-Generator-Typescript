@@ -9,7 +9,6 @@ export class User {
         lng: number;
     }
 
-
 constructor() {
     this.name= faker.name.firstName();
     this.location={
