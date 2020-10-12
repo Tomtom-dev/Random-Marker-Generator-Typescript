@@ -100430,6 +100430,7 @@ var Company =
 /** @class */
 function () {
   function Company() {
+    this.color = "red";
     this.companyName = faker_1.default.company.companyName();
     this.catchPhrase = faker_1.default.company.catchPhrase();
     this.location = {
@@ -100437,6 +100438,10 @@ function () {
       lng: parseFloat(faker_1.default.address.longitude())
     };
   }
+
+  Company.prototype.markerContent = function () {
+    return "\n            <div>\n            <h1>Company name: " + this.companyName + "</h1>\n            <h3>catchPhrase: " + this.catchPhrase + "</h3>\n            </div>";
+  };
 
   return Company;
 }();
@@ -100475,7 +100480,7 @@ function () {
     });
     marker.addListener('click', function () {
       var infoWindow = new google.maps.InfoWindow({
-        content: "Hi there !"
+        content: mappable.markerContent()
       });
       infoWindow.open(_this.googleMap, marker);
     });
@@ -100497,22 +100502,25 @@ var __importDefault = this && this.__importDefault || function (mod) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.User = exports.red = void 0;
+exports.User = void 0;
 
 var faker_1 = __importDefault(require("faker"));
-
-exports.red = 'red';
 
 var User =
 /** @class */
 function () {
   function User() {
+    this.color = " red";
     this.name = faker_1.default.name.firstName();
     this.location = {
       lat: parseFloat(faker_1.default.address.latitude()),
       lng: parseFloat(faker_1.default.address.longitude())
     };
   }
+
+  User.prototype.markerContent = function () {
+    return "User Name: " + this.name;
+  };
 
   return User;
 }();
